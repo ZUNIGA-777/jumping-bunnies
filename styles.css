@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cornflowerblue;
+}
+
+.bunnies {
+    --position: 0;
+    width: 10vmin;
+    height: 10vmin;
+    background-image: url("./img/bunny-ready.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    animation: rabbits 0.9s infinite;
+    animation-delay: calc(var(--position) * -1s);
+}
+
+.bunnies:nth-child(1) {
+    --position: 0;
+}
+
+.bunnies:nth-child(2) {
+    --position: 2;
+}
+
+.bunnies:nth-child(3) {
+    --position: 4;
+}
+
+.bunnies:nth-child(4) {
+    --position: 6;
+}
+
+.bunnies:nth-child(5) {
+    --position: 1.6;
+}
+
+@keyframes rabbits {
+    0% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(0, -80px) scaleX(0.9) scaleY(1.2);
+        background-image: url(./img/bunny-jump.webp);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    100% {
+        transform: translate(0,0);
+    }
+}
+
